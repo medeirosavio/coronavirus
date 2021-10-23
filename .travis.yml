@@ -1,0 +1,8 @@
+dist: xenial
+language: java
+sudo: false
+jdk: openjdk14
+install: true
+cache:
+  directories:
+    - C:\Users\babi_\Arquivos GIT\coronavirus

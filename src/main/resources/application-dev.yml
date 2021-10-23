@@ -1,0 +1,6 @@
+logging:
+  level:
+    br:
+      com:
+        savio:
+          project: DEBUG
