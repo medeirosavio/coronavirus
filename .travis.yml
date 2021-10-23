@@ -5,4 +5,4 @@ jdk: openjdk16
 install: true
 cache:
   directories:
-    - C:\Users\babi_\Arquivos GIT\coronavirus
+    - /C:/Users/babi_/.m2
