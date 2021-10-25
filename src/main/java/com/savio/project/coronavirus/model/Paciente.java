@@ -1,5 +1,6 @@
-package com.savio.project.coronavirus.Model;
+package com.savio.project.coronavirus.model;
 
+import util.Auditoria;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-public class Paciente {
+public class Paciente extends Auditoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

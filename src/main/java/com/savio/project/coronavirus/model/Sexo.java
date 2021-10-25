@@ -1,4 +1,4 @@
-package com.savio.project.coronavirus.Model;
+package com.savio.project.coronavirus.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
