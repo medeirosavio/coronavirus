@@ -1,4 +1,4 @@
-package util;
+package com.savio.project.coronavirus.util;
 
 import lombok.Getter;
 import lombok.Setter;

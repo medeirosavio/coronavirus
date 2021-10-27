@@ -1,6 +1,6 @@
 package com.savio.project.coronavirus.model;
 
-import util.Auditoria;
+import com.savio.project.coronavirus.util.Auditoria;
 import lombok.Data;
 
 import javax.persistence.*;
