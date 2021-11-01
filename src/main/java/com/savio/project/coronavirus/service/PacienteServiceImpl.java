@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class PacienteServiceImpl implements PacienteService{
 
-    private static PacienteMapper pacienteMapper = PacienteMapper.INSTANCE;
 
-    @Autowired
-    PacienteRepository pacienteRepository;
+    static PacienteMapper pacienteMapper = PacienteMapper.INSTANCE;
+
 
 
 

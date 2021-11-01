@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/coronavirus")
-public class HospitalController {
+public class EstabelecimentoController {
 
-    @Autowired
-    PacienteService pacienteService;
+
 
 }

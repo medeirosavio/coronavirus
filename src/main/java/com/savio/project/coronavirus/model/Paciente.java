@@ -46,6 +46,6 @@ public class Paciente extends Auditoria {
     private boolean percaPaladar;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    private Hospital hospital;
+    private Estabelecimento estabelecimento;
 
 }

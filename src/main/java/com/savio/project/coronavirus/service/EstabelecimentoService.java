@@ -1,4 +1,4 @@
 package com.savio.project.coronavirus.service;
 
-public interface HospitalService {
+public interface EstabelecimentoService {
 }

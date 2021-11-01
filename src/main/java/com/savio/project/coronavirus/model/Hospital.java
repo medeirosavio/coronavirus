@@ -1,32 +1,30 @@
 package com.savio.project.coronavirus.model;
 
-import com.savio.project.coronavirus.util.Auditoria;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Data
 @Entity
-public class Hospital extends Auditoria {
+public class Hospital extends Estabelecimento{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
     @Column(nullable = false)
-    private String nome;
+    private int leitosDisponiveis;
 
     @Column(nullable = false)
-    private String endereco;
+    private int leitosOcupados;
 
-    @Column(columnDefinition = "integer default 0")
-    private int leitosUTI;
+    public Hospital(String nome,String endereco,int leitosDisponiveis,int leitosOcupados){
+        super(nome,endereco);
+        this.leitosDisponiveis = leitosDisponiveis;
+        this.leitosOcupados = leitosOcupados;
+    }
 
-    @Column(columnDefinition = "integer default 0")
-    private int leitosEnfermaria;
 
-    @OneToMany(mappedBy = "hospital" , fetch = FetchType.LAZY)
-    private List<Paciente> pacientes;
+    public Hospital() {
 
+    }
 }
