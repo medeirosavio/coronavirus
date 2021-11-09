@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -13,8 +12,6 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class HospitalDTO {
 
-    @NotNull
-    @NotEmpty
     private Long id;
 
     @NotNull
@@ -26,9 +23,15 @@ public class HospitalDTO {
     private String endereco;
 
     @NotNull
-    private int leitosUTI;
+    private Integer leitosUTI;
 
     @NotNull
-    private int leitosEnfermaria;
+    private Integer leitosEnfermaria;
+
+    @NotNull
+    private Integer ocupadosEnfermaria;
+
+    @NotNull
+    private Integer ocupadosUTI;
 
 }

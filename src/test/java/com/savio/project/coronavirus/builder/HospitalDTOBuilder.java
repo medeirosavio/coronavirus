@@ -3,6 +3,7 @@ package com.savio.project.coronavirus.builder;
 import com.savio.project.coronavirus.DTO.HospitalDTO;
 import lombok.Builder;
 
+
 @Builder
 public class HospitalDTOBuilder {
 
@@ -16,13 +17,21 @@ public class HospitalDTOBuilder {
     private final String endereco = "Neoquimica Arena";
 
     @Builder.Default
-    private int leitosUTI = 10 ;
+    private final Integer leitosUTI = 10 ;
 
     @Builder.Default
-    private int leitosEnfermaria = 20 ;
+    private final Integer leitosEnfermaria = 20 ;
 
-    public HospitalDTO hospitalDTOBuilder(){
-        return new HospitalDTO(id,nome,endereco,leitosUTI,leitosEnfermaria);
+    @Builder.Default
+    private final Integer ocupadosEnfermaria = 10;
+
+    @Builder.Default
+    private final Integer ocupadosUTI = 8;
+
+    public HospitalDTO buildHospitalDTO(){
+
+        return new HospitalDTO(id,nome,endereco,leitosUTI
+                ,leitosEnfermaria,ocupadosUTI,ocupadosEnfermaria);
     }
 
 }

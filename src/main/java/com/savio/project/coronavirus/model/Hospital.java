@@ -9,6 +9,7 @@ import org.hibernate.mapping.Subclass;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -17,11 +18,17 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class Hospital extends Estabelecimento{
 
-    @Column(nullable = false)
-    private int leitosDisponiveis;
+    @Column
+    private int leitosUTI;
 
-    @Column(nullable = false)
-    private int leitosOcupados;
+    @Column
+    private int leitosEnfermaria;
+
+    @Column
+    private int ocupadosEnfermaria;
+
+    @Column
+    private int ocupadosUTI;;
 
 
     public Hospital() {
