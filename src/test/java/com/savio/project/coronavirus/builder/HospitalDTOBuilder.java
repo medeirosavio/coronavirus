@@ -11,6 +11,9 @@ public class HospitalDTOBuilder {
     private final Long id = 1L;
 
     @Builder.Default
+    private final Long cnpj = 100200000199L;
+
+    @Builder.Default
     private final String nome = "Roger Krug Guedes";
 
     @Builder.Default
@@ -30,7 +33,7 @@ public class HospitalDTOBuilder {
 
     public HospitalDTO buildHospitalDTO(){
 
-        return new HospitalDTO(id,nome,endereco,leitosUTI
+        return new HospitalDTO(id,cnpj,nome,endereco,leitosUTI
                 ,leitosEnfermaria,ocupadosUTI,ocupadosEnfermaria);
     }
 

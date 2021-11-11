@@ -29,7 +29,7 @@ public class CoronavirusExceptionHandler extends ResponseEntityExceptionHandler 
                 Collections.singletonList(exception.getMessage()));
     }
 
-    @ExceptionHandler(EntityNotFoundException.class)
+    @ExceptionHandler(EntityExistsException.class)
     public ResponseEntity<Object> handleEntityExistsException(EntityExistsException exception){
         return buildResponseEntity(
                 HttpStatus.BAD_REQUEST,

@@ -15,6 +15,9 @@ public class HospitalDTO {
     private Long id;
 
     @NotNull
+    private Long cnpj;
+
+    @NotNull
     @NotEmpty
     private String nome;
 

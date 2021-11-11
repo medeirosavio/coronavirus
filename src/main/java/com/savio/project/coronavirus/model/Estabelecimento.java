@@ -21,6 +21,9 @@ public abstract class Estabelecimento extends Auditoria {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
+    @Column(nullable = false , unique = true)
+    private long cnpj;
+
     @Column(nullable = false)
     private String nome;
 
@@ -29,7 +32,6 @@ public abstract class Estabelecimento extends Auditoria {
 
     @OneToMany(mappedBy = "estabelecimento" , fetch = FetchType.LAZY)
     private List<Paciente> pacientes;
-
 
     public Estabelecimento() {
 
