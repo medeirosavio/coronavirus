@@ -1,9 +1,13 @@
 package com.savio.project.coronavirus.service;
 
 import com.savio.project.coronavirus.DTO.HospitalDTO;
+import com.savio.project.coronavirus.DTO.UPADTO;
 import com.savio.project.coronavirus.builder.HospitalDTOBuilder;
+import com.savio.project.coronavirus.builder.UPADTOBuilder;
 import com.savio.project.coronavirus.mapper.HospitalMapper;
+import com.savio.project.coronavirus.mapper.UPAMapper;
 import com.savio.project.coronavirus.model.Hospital;
+import com.savio.project.coronavirus.model.UPA;
 import com.savio.project.coronavirus.repository.EstabelecimentoRepository;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.Is;
@@ -21,6 +25,8 @@ public class EstabelecimentoServiceTest {
 
     private final HospitalMapper hospitalMapper = HospitalMapper.INSTANCE;
 
+    private final UPAMapper upaMapper = UPAMapper.INSTANCE;
+
     @Mock
     private EstabelecimentoRepository estabelecimentoRepository;
 
@@ -29,10 +35,12 @@ public class EstabelecimentoServiceTest {
 
     private HospitalDTOBuilder hospitalDTOBuilder;
 
+    private UPADTOBuilder upadtoBuilder;
+
     @BeforeEach
     void setup(){
         hospitalDTOBuilder = HospitalDTOBuilder.builder().build();
-    }
+        upadtoBuilder = UPADTOBuilder.builder().build();}
 
     @Test
     void whenNewHospitalIsInformedThenItShouldBeCreated(){
@@ -44,6 +52,18 @@ public class EstabelecimentoServiceTest {
         HospitalDTO createdHospitalDTO = estabelecimentoService.cadastrarHospital(expectedHospitalToCreateDTO);
 
         MatcherAssert.assertThat(createdHospitalDTO, Is.is(IsEqual.equalTo(expectedHospitalToCreateDTO)));
+    }
+
+    @Test
+    void whenNewUPAlIsInformedThenItShouldBeCreated(){
+        UPADTO expectedUPAToCreateDTO = upadtoBuilder.buildUPADTO();
+        UPA expectedCreatedUPA = upaMapper.toModel(expectedUPAToCreateDTO);
+
+        Mockito.when(estabelecimentoRepository.save(expectedCreatedUPA)).thenReturn(expectedCreatedUPA);
+
+        UPADTO createdUPADTO = estabelecimentoService.cadastrarUPA(expectedUPAToCreateDTO);
+
+        MatcherAssert.assertThat(createdUPADTO, Is.is(IsEqual.equalTo(expectedUPAToCreateDTO)));
     }
 
 }
