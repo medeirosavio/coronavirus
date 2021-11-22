@@ -1,6 +1,6 @@
 package com.savio.project.coronavirus.controller;
 
-
+import com.savio.project.coronavirus.DTO.UPADTO;
 import com.savio.project.coronavirus.DTO.HospitalDTO;
 import com.savio.project.coronavirus.controllerdocs.AdministradorControllerDocs;
 import com.savio.project.coronavirus.service.EstabelecimentoService;
@@ -19,6 +19,11 @@ public class AdministradorController implements AdministradorControllerDocs {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+  
+    public UPADTO cadastrarUPA(@RequestBody @Valid UPADTO upadto){
+        return estabelecimentoService.cadastrarUPA(upadto);
+    }
+
     public HospitalDTO cadastrarHospital(@RequestBody @Valid HospitalDTO hospitalDTO) {
         return estabelecimentoService.cadastrarHospital(hospitalDTO);
     }
